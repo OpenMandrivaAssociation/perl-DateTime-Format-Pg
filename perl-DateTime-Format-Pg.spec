@@ -2,14 +2,14 @@
 %define upstream_version 0.16008
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.16008
+Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Parse and format PostgreSQL dates and times
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/DateTime/DateTime-Format-Pg-0.16008.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/DateTime/DateTime-Format-Pg-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(DateTime)
