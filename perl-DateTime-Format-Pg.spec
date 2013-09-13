@@ -1,15 +1,15 @@
 %define upstream_name    DateTime-Format-Pg
-%define upstream_version 0.16005
+%define upstream_version 0.16008
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Parse and format PostgreSQL dates and times
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/DateTime/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/DateTime/DateTime-Format-Pg-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(DateTime)
@@ -40,7 +40,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %makeinstall_std
 
 %files
-%doc Changes LICENSE META.yml README
+%doc Changes LICENSE META.yml 
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
 
@@ -52,4 +52,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Fri Dec 03 2010 Shlomi Fish <shlomif@mandriva.org> 0.160.50-1mdv2011.0
 + Revision: 607837
 - import perl-DateTime-Format-Pg
+
 
