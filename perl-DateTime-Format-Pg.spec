@@ -1,5 +1,5 @@
 %define upstream_name    DateTime-Format-Pg
-%define upstream_version 0.16008
+%define upstream_version 0.16009
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -52,5 +52,6 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Fri Dec 03 2010 Shlomi Fish <shlomif@mandriva.org> 0.160.50-1mdv2011.0
 + Revision: 607837
 - import perl-DateTime-Format-Pg
+
 
 
