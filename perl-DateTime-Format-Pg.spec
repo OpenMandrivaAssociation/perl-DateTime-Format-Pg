@@ -1,5 +1,5 @@
 %define upstream_name    DateTime-Format-Pg
-%define upstream_version 0.16008
+%define upstream_version 0.16009
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -12,6 +12,7 @@ Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/DateTime/DateTime-Format-Pg-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Module::Build)
 BuildRequires:	perl(DateTime)
 BuildRequires:	perl(DateTime::Format::Builder)
 BuildRequires:	perl(DateTime::TimeZone)
@@ -30,14 +31,14 @@ representing it in a format accepted by PostgreSQL.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor
-%make
+perl Build.PL installdirs=vendor
+./Build
 
 %check
-%make test
+./Build test
 
 %install
-%makeinstall_std
+./Build install destdir=%{buildroot}
 
 %files
 %doc Changes LICENSE META.yml 
@@ -52,5 +53,6 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Fri Dec 03 2010 Shlomi Fish <shlomif@mandriva.org> 0.160.50-1mdv2011.0
 + Revision: 607837
 - import perl-DateTime-Format-Pg
+
 
 
